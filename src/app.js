@@ -15,6 +15,10 @@ const MONGO_URI = process.env.MONGO_URI;
 app.use(cors());
 app.use(express.json());
 
+// Root route (API status)
+app.get("/", (req, res) => {
+  res.send("Task Manager API running");
+});
 // Routes (API Base URL)
 app.use("/api/tasks", taskRoutes);
 
