@@ -10,9 +10,7 @@ import {
 const router = express.Router();
 
 // Routes
-router.get("/", (req, res) => {
-  res.send("Task Manager API running");
-});
+
 router.get("/", getTasks);
 router.post("/", createTask);
 router.put("/:id", updateTask);
