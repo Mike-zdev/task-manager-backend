@@ -17,7 +17,14 @@ app.use(express.json());
 
 // Root route (API status)
 app.get("/", (req, res) => {
-  res.send("Task Manager API running");
+  res.json({
+    name: "Task Manager API",
+    status: "running",
+    version: "1.0.0",
+    endpoints: {
+      tasks: "/api/tasks"
+    }
+  });
 });
 // Routes (API Base URL)
 app.use("/api/tasks", taskRoutes);
